@@ -1,14 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "pnpm build"
   publish = ".output/public"
 
 [functions]
-  directory = ".output/server"
-
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server"
-  status = 200
+  directory = ".netlify/v1/functions"
 
 [[redirects]]
   from = "/*"

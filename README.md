@@ -29,6 +29,33 @@ pnpm test
 
 This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
+## Deployment on Netlify
+
+This app is configured to be built directly by Netlify when connected to GitHub.
+
+### Netlify project settings
+
+In the Netlify dashboard, set:
+
+- Build command: `pnpm build`
+- Publish directory: `.output/public`
+- Node version: `22`
+
+The repo includes the Netlify-compatible TanStack Start plugin in `vite.config.ts` and the deployment config in `netlify.toml`.
+
+### Connect the repo to Netlify
+
+1. Log in to Netlify
+2. Click Add new site → Import an existing project
+3. Connect your GitHub repository
+4. Keep the default build settings above
+5. Deploy the site
+
+Netlify will build and deploy the project from GitHub automatically on pushes to the selected branch.
+
+### Required environment variables
+
+Set any required app environment variables in Netlify site settings, especially runtime values used by the app or Sentry. Keep secrets out of the repository and in Netlify, not in GitHub Actions.
 
 ## Linting & Formatting
 
